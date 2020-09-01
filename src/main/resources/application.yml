@@ -43,5 +43,7 @@ spring:
 mybatis:
   type-aliases-package: com.mazj.pojo
   mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
 server:
   port: 3006
