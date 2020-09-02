@@ -1,4 +1,4 @@
-package com.powerseu.dndx.common.util;
+package com.mazj.utils;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -8,7 +8,9 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class DateUtils {
 	/** 完整时间 yyyy-MM-dd HH:mm:ss */

@@ -33,7 +33,7 @@ public class UserController {
         if (userList >= 1) {
             return new ResultInfo().successInfo(ResultCode.REQ_SUCCESS, "");
         } else {
-            return new ResultInfo().errInfo(ResultCode.UP_ERROR, "");
+            return new ResultInfo().errInfo(ResultCode.UP_ERROR);
         }
     }
 }

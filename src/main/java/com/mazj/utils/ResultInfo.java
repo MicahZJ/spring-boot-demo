@@ -9,15 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResultInfo {
-    private ResultCode msg;
+    private String msg;
     private Object data;
+    private Object code;
 
     public ResultInfo successInfo(ResultCode msg, Object data) {
-        return new ResultInfo(msg, data);
+        return new ResultInfo(msg.getMsg(), data, msg.getCode());
     }
 
-    public ResultInfo errInfo(ResultCode msg, Object data) {
-        return new ResultInfo(msg, data);
+    public ResultInfo errInfo(ResultCode msg) {
+        return new ResultInfo(msg.getMsg(), "", msg.getCode());
     }
 
 }
