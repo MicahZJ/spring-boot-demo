@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sun.plugin2.message.JavaObjectOpMessage;
 
+import java.util.HashMap;
 import java.util.List;
 @RequestMapping("/api")
 @RestController
@@ -18,13 +19,15 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("/queryUserList")
-    public List<User> queryUserList () {
+    @GetMapping("/queryUser")
+    public ResultInfo queryUserList () {
         List<User> userList = userMapper.queryUserList();
-        for (User user : userList) {
-            System.out.println(user);
+        if (userList == null) {
+            return new ResultInfo().successInfo(ResultCode.REQ_SUCCESS, "");
         }
-        return userList;
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("queryData", userList);
+        return new ResultInfo().successInfo(ResultCode.REQ_SUCCESS, map);
     }
 
     @PostMapping("/addUser")
