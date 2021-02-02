@@ -14,7 +14,7 @@ public interface UserMapper {
 
     List<User> queryUserList();
 
-    User queryUserById(@Param("id") int id);
+    List<User> queryUserById(User user);
 
     int addUser(User user);
 

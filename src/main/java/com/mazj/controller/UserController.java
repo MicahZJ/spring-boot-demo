@@ -12,7 +12,7 @@ import sun.plugin2.message.JavaObjectOpMessage;
 
 import java.util.HashMap;
 import java.util.List;
-@RequestMapping("/api")
+@RequestMapping("/api/user")
 @RestController
 public class UserController {
 
